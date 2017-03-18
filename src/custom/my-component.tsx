@@ -7,6 +7,7 @@ interface Props {
     input: number;
     title: string;
     subtitle?: string;
+    doubleToggle: boolean;
 }
 
 interface State {
@@ -42,11 +43,19 @@ export class MyComponent extends React.Component<Props, State> {
     componentDidUpdate(){
         console.log(this.refs.titleElem);
         console.log('componentDidUpdate');
+
+        React.Children.toArray(this.props.children).forEach(child => {
+            console.log(`Child ${(child as any).props.className} -> ${child}`);
+        });
     }
 
     render() {
         const {children, input, title, subtitle} = this.props;
         const {items} = this.state;
+        
+        const secondToggle = this.props.doubleToggle
+                ? <Toggle isOpen={!this.state.isOpen} toggle={this.toggle.bind(this)}></Toggle>
+                : <aside>Second toggle placeholder...</aside>;
 
         return (
             <div className="mycomponent">
@@ -56,7 +65,7 @@ export class MyComponent extends React.Component<Props, State> {
                 <h4>Sub: {subtitle}</h4>
                 <div>
                     <Toggle isOpen={this.state.isOpen} toggle={this.toggle.bind(this)}></Toggle>
-                    <Toggle isOpen={!this.state.isOpen} toggle={this.toggle.bind(this)}></Toggle>
+                    {secondToggle}
                 </div>
                 {items.map(item => (
                     <p key={item.id}>ITEM: {item.name}</p>

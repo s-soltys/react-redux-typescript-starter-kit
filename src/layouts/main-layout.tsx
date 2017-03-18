@@ -21,8 +21,9 @@ export class MainLayout extends React.Component<{}, {}> {
         </LayoutHeader>
 
         <LayoutMain>
-          <MyComponent title="My First" input={256}>
-            I<strong>NN</strong>ER
+          <MyComponent title="My First" input={256} doubleToggle={true}>
+            <span className='content-child-b'>I<strong>NN</strong>ER</span>
+            <div className='content-child-a'>Other child</div>
           </MyComponent>
           {children}
         </LayoutMain>

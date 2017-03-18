@@ -28,8 +28,6 @@
     "test": "jest --config jest.json",
     "test:update": "jest --config jest.json -u",
     "test:redux": "jest --config jest.json src/store/currency-converter/utils.spec.tsx",
-    "precommit": "yarn run lint",
-    "prepush": "yarn run tsc & yarn run test",
     "deploy:init": "node scripts/deploy.js init",
     "deploy": "git checkout gh-pages && cd dist && git add --all && git commit -m \"New Release\" && git push"
   },
@@ -44,7 +42,6 @@
     "@types/react-router": "^3.0.5",
     "@types/react-router-redux": "^4.0.41",
     "@types/systemjs": "^0.19.33",
-    "husky": "^0.13.2",
     "jest": "^19.0.2",
     "jspm": "0.17.0-beta.32",
     "jspm-hmr": "^1.0.0-rc6",
