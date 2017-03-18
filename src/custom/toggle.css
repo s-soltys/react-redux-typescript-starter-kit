@@ -1,0 +1,16 @@
+.toggle {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toggle.on {
+    background-color: mediumspringgreen;
+}
+
+.toggle.off {
+    background-color: dimgrey;
+}

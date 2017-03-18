@@ -4,6 +4,7 @@ import { LayoutTopNav, LayoutTopNavLink } from './components/layout-top-nav';
 import { LayoutHeader } from './components/layout-header';
 import { LayoutMain } from './components/layout-main';
 import { LayoutFooter } from './components/layout-footer';
+import { MyComponent } from "../custom/my-component";
 
 export class MainLayout extends React.Component<{}, {}> {
   render() {
@@ -20,6 +21,9 @@ export class MainLayout extends React.Component<{}, {}> {
         </LayoutHeader>
 
         <LayoutMain>
+          <MyComponent title="My First" input={256}>
+            I<strong>NN</strong>ER
+          </MyComponent>
           {children}
         </LayoutMain>
 
